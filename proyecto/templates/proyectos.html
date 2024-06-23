@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+<!-- <a href = "{%url 'proyecto' proyecto.id%}" > {{ proyecto.titulo }} </a>  ({{ proyecto.responsable }}) -->
+
+{% block content %}
+    <h2> Catálogo de proyectos</h2>
+
+    {% if proyectos %}
+    <p>Esta consulta tiene proyectos para listar!</p>
+
+    <main role="main">
+
+            <div class="album py-5 bg-light">
+            <div class="container">
+
+                <div class="row">
+                    {% for proyecto in proyectos %}
+                    <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                    {% if proyecto.image %}
+                        <img class="card-img-top" src="{{proyecto.image.url}}" alt="Card image cap">
+                    {% endif %}
+
+                    <div class="card-body">
+                        <a href = "#" > {{ proyecto.titulo }} </a>  ({{ proyecto.responsable }})
+                        <p class="card-text">{{proyecto.descripcion}}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                        </div>
+                        <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    {% endfor %}    
+                </div>
+
+
+            
+            </div>
+            </div>
+    </main>
+
+
+
+
+        
+    {% else %}
+        <p>Esta consulta no ha tr5aído proyectos para listar!</p>
+    {% endif %}
+{% endblock %}
