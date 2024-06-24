@@ -3,16 +3,15 @@
 <!-- <a href = "{%url 'proyecto' proyecto.id%}" > {{ proyecto.titulo }} </a>  ({{ proyecto.responsable }}) -->
 
 {% block content %}
-    <h2> Catálogo de proyectos</h2>
 
     {% if proyectos %}
-    <p>Esta consulta tiene proyectos para listar!</p>
 
     <main role="main">
 
             <div class="album py-5 bg-light">
             <div class="container">
-
+                
+                <p><h2> Catálogo de proyectos</h2></p>
                 <div class="row">
                     {% for proyecto in proyectos %}
                     <div class="col-md-4">
@@ -22,14 +21,15 @@
                     {% endif %}
 
                     <div class="card-body">
-                        <a href = "#" > {{ proyecto.titulo }} </a>  ({{ proyecto.responsable }})
+                        <h4 class="text-white">
+                        <a href = "#" > {{ proyecto.titulo }} </a>  </h4>({{ proyecto.responsable }})
                         <p class="card-text">{{proyecto.descripcion}}</p>
                         <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Info</button>
                         </div>
-                        <small class="text-muted">9 mins</small>
+                        <small class="text-muted">{{ proyecto.anioejecucion }}</small>
                         </div>
                     </div>
                     </div>
@@ -38,16 +38,11 @@
                 </div>
 
 
-            
             </div>
             </div>
     </main>
 
-
-
-
-        
     {% else %}
-        <p>Esta consulta no ha tr5aído proyectos para listar!</p>
+        <p>Esta consulta no ha traído proyectos para listar!</p>
     {% endif %}
 {% endblock %}
