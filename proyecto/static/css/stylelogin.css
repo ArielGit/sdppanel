@@ -1,0 +1,62 @@
+body{
+    margin-top:10px;
+    background: #ffffff;
+}
+.account-block {
+    margin-top:40px;
+
+    padding: 0;
+    background-image: url(http://192.168.100.9:8000/media/images/logo-jujuy-con-la-gente-banner.png);
+    background-repeat: no-repeat;
+    background-size:contain;
+    height: 100%;
+    position: relative;
+}
+.account-block .overlay {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+.account-block .account-testimonial {
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    margin: 0 auto;
+    padding: 0 1.75rem;
+    bottom: 3rem;
+    left: 0;
+    right: 0;
+}
+
+.text-theme {
+    color: #13314d !important;
+}
+
+.btn-theme {
+    background-color: #13314d;
+    border-color: #13314d;
+    color: #fff;
+}
+.btn-theme-submit {
+    background-color: #13314d;
+    border-color: #13314d;
+    color: #fff;
+    margin: 20px;
+    padding: 10px;
+    float: left;
+    clear: left;
+}
+
+#my_form p label, 
+#my_form p input{
+    margin: 10px;
+
+    float: left;
+    clear: left;
+}
